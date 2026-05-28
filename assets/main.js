@@ -238,7 +238,6 @@ function showToast(message, type = 'info') {
     }, 3000);
 }
 
-// Form Submit with AJAX
 function submitFormAjax(formId, successCallback) {
     const form = document.getElementById(formId);
     if (!form) return;
@@ -283,17 +282,14 @@ function submitFormAjax(formId, successCallback) {
     });
 }
 
-// Date Picker Restrictions
 document.addEventListener('DOMContentLoaded', function() {
     const dateInputs = document.querySelectorAll('input[type="date"]');
     dateInputs.forEach(input => {
-        // Set minimum date to today
         const today = new Date().toISOString().split('T')[0];
         input.setAttribute('min', today);
     });
 });
 
-// Auto-resize Textarea
 document.addEventListener('DOMContentLoaded', function() {
     const textareas = document.querySelectorAll('textarea');
     textareas.forEach(textarea => {
@@ -304,7 +300,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Character Counter
 function addCharacterCounter(textareaId, maxLength) {
     const textarea = document.getElementById(textareaId);
     if (!textarea) return;
@@ -324,7 +319,6 @@ function addCharacterCounter(textareaId, maxLength) {
     updateCounter();
 }
 
-// Print Function
 function printSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (!section) return;
@@ -344,7 +338,6 @@ function printSection(sectionId) {
     printWindow.document.close();
 }
 
-// Copy to Clipboard
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text).then(() => {
         showToast('Copied to clipboard', 'success');
@@ -354,14 +347,12 @@ function copyToClipboard(text) {
     });
 }
 
-// Dark Mode Toggle (Optional Feature)
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
     const isDarkMode = document.body.classList.contains('dark-mode');
     localStorage.setItem('darkMode', isDarkMode);
 }
 
-// Load Dark Mode Preference
 document.addEventListener('DOMContentLoaded', function() {
     const darkMode = localStorage.getItem('darkMode') === 'true';
     if (darkMode) {
@@ -369,7 +360,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Initialize tooltips (if using)
 document.addEventListener('DOMContentLoaded', function() {
     const tooltips = document.querySelectorAll('[data-tooltip]');
     tooltips.forEach(element => {
