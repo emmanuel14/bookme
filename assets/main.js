@@ -1,4 +1,3 @@
-// Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navbarMenu = document.querySelector('.navbar-menu');
@@ -9,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Close mobile menu when clicking outside
     document.addEventListener('click', function(event) {
         if (!event.target.closest('.navbar') && navbarMenu) {
             navbarMenu.classList.remove('active');
@@ -17,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Form Validation
 function validateForm(formId) {
     const form = document.getElementById(formId);
     if (!form) return true;
@@ -34,7 +31,6 @@ function validateForm(formId) {
         }
     });
     
-    // Email validation
     const emailInputs = form.querySelectorAll('input[type="email"]');
     emailInputs.forEach(input => {
         if (input.value && !validateEmail(input.value)) {
@@ -43,7 +39,6 @@ function validateForm(formId) {
         }
     });
     
-    // Phone validation
     const phoneInputs = form.querySelectorAll('input[type="tel"]');
     phoneInputs.forEach(input => {
         if (input.value && !validatePhone(input.value)) {
@@ -52,7 +47,6 @@ function validateForm(formId) {
         }
     });
     
-    // Password confirmation
     const password = form.querySelector('input[name="password"]');
     const confirmPassword = form.querySelector('input[name="confirm_password"]');
     if (password && confirmPassword && password.value !== confirmPassword.value) {
@@ -90,7 +84,6 @@ function validatePhone(phone) {
     return re.test(phone);
 }
 
-// Auto-hide alerts
 document.addEventListener('DOMContentLoaded', function() {
     const alerts = document.querySelectorAll('.alert');
     alerts.forEach(alert => {
@@ -103,7 +96,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Add fadeOut animation
 const style = document.createElement('style');
 style.textContent = `
     @keyframes fadeOut {
@@ -113,12 +105,10 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Confirm Dialog
 function confirmAction(message) {
     return confirm(message || 'Are you sure you want to proceed?');
 }
 
-// Image Preview
 function previewImage(input, previewId) {
     if (input.files && input.files[0]) {
         const reader = new FileReader();
@@ -133,7 +123,6 @@ function previewImage(input, previewId) {
     }
 }
 
-// Dynamic Time Slots
 function loadTimeSlots(professionalId, serviceId, date) {
     if (!professionalId || !serviceId || !date) return;
     
@@ -171,7 +160,6 @@ function loadTimeSlots(professionalId, serviceId, date) {
         });
 }
 
-// Search and Filter
 function searchProfessionals() {
     const category = document.getElementById('search-category')?.value || '';
     const location = document.getElementById('search-location')?.value || '';
@@ -185,22 +173,20 @@ function searchProfessionals() {
     window.location.href = `professionals.php?${params.toString()}`;
 }
 
-// Rating Stars
 function renderStars(rating, maxRating = 5) {
     let html = '';
     for (let i = 1; i <= maxRating; i++) {
         if (i <= rating) {
-            html += '<span class="star">★</span>';
+            html += '<span class="star"><i class="fas fa-star"></i></span>';
         } else if (i - 0.5 <= rating) {
-            html += '<span class="star">⯨</span>';
+            html += '<span class="star"><i class="fas fa-star-half-alt"></i></span>';
         } else {
-            html += '<span class="star">☆</span>';
+            html += '<span class="star"><i class="far fa-star"></i></span>';
         }
     }
     return html;
 }
 
-// Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
@@ -217,7 +203,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Loading Indicator
 function showLoading(elementId) {
     const element = document.getElementById(elementId);
     if (element) {
@@ -232,7 +217,6 @@ function hideLoading(elementId) {
     }
 }
 
-// Toast Notification
 function showToast(message, type = 'info') {
     const toast = document.createElement('div');
     toast.className = `alert alert-${type}`;

@@ -1,16 +1,10 @@
 <?php
-/**
- * Database Configuration
- * Update these credentials based on your environment
- */
 
-// Database credentials
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'booking_platform');
 
-// Create database connection
 try {
     $conn = new PDO(
         "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4",
@@ -26,7 +20,6 @@ try {
     die("Database connection failed: " . $e->getMessage());
 }
 
-// Start session if not already started
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }

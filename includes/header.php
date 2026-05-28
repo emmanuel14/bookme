@@ -12,10 +12,9 @@ if (session_status() === PHP_SESSION_NONE) {
     <title><?php echo isset($pageTitle) ? $pageTitle . ' - ' : ''; ?>BookingPro</title>
     <meta name="description" content="Book local professionals - barbers, tailors, mechanics, makeup artists, and more">
     <link rel="stylesheet" href="<?php echo SITE_URL; ?>/assets/css/style.css">
-    <!-- Stylesheet -->
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="icon" type="image/png" href="<?php echo SITE_URL; ?>/assets/images/logo.png">
-     <!-- JavaScript -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="/assets/main.js"></script>
 </head>
 <body>

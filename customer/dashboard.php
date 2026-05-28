@@ -7,7 +7,6 @@ requireLogin('customer');
 
 $customerId = $_SESSION['user_id'];
 
-// Get statistics
 $stmt = $conn->prepare("SELECT COUNT(*) FROM bookings WHERE customer_id = ?");
 $stmt->execute([$customerId]);
 $totalBookings = $stmt->fetchColumn();
@@ -24,7 +23,6 @@ $stmt = $conn->prepare("SELECT COUNT(*) FROM bookings WHERE customer_id = ? AND 
 $stmt->execute([$customerId]);
 $completedBookings = $stmt->fetchColumn();
 
-// Get recent bookings
 $stmt = $conn->prepare("SELECT b.*, u.name as professional_name, p.category, p.location, s.name as service_name, s.price 
                         FROM bookings b 
                         JOIN professionals p ON b.professional_id = p.id 
@@ -36,7 +34,6 @@ $stmt = $conn->prepare("SELECT b.*, u.name as professional_name, p.category, p.l
 $stmt->execute([$customerId]);
 $recentBookings = $stmt->fetchAll();
 
-// Get notifications
 $stmt = $conn->prepare("SELECT * FROM notifications WHERE user_id = ? ORDER BY created_at DESC LIMIT 5");
 $stmt->execute([$customerId]);
 $notifications = $stmt->fetchAll();
@@ -53,10 +50,9 @@ include '../includes/navbar.php';
             <p style="color: var(--gray-color);">Manage your bookings and explore new services</p>
         </div>
         
-        <!-- Statistics -->
         <div class="dashboard-stats">
             <div class="stat-card">
-                <div class="stat-icon" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">📅</div>
+                <div class="stat-icon" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);"><i class="fas fa-calendar"></i></div>
                 <div class="stat-content">
                     <h3><?php echo $totalBookings; ?></h3>
                     <p>Total Bookings</p>
@@ -64,7 +60,7 @@ include '../includes/navbar.php';
             </div>
             
             <div class="stat-card">
-                <div class="stat-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">⏳</div>
+                <div class="stat-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);"><i class="fas fa-hourglass-end"></i></div>
                 <div class="stat-content">
                     <h3><?php echo $pendingBookings; ?></h3>
                     <p>Pending</p>
@@ -72,7 +68,7 @@ include '../includes/navbar.php';
             </div>
             
             <div class="stat-card">
-                <div class="stat-icon" style="background: linear-gradient(135deg, #10b981, #059669);">✅</div>
+                <div class="stat-icon" style="background: linear-gradient(135deg, #10b981, #059669);"><i class="fas fa-check"></i></div>
                 <div class="stat-content">
                     <h3><?php echo $upcomingBookings; ?></h3>
                     <p>Upcoming</p>
@@ -80,7 +76,7 @@ include '../includes/navbar.php';
             </div>
             
             <div class="stat-card">
-                <div class="stat-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">🎉</div>
+                <div class="stat-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);"><i class="fas fa-star"></i></div>
                 <div class="stat-content">
                     <h3><?php echo $completedBookings; ?></h3>
                     <p>Completed</p>
@@ -88,7 +84,6 @@ include '../includes/navbar.php';
             </div>
         </div>
         
-        <!-- Quick Actions -->
         <div class="card" style="margin-bottom: 2rem;">
             <div class="card-header">
                 <h3>Quick Actions</h3>
@@ -101,7 +96,6 @@ include '../includes/navbar.php';
         </div>
         
         <div class="grid grid-2">
-            <!-- Recent Bookings -->
             <div class="card">
                 <div class="card-header">
                     <h3>Recent Bookings</h3>
@@ -132,7 +126,7 @@ include '../includes/navbar.php';
                                         </span>
                                     </div>
                                     <p style="font-size: 0.875rem;">
-                                        📅 <?php echo date('F j, Y', strtotime($booking['booking_date'])); ?> at 
+                                        <i class="fas fa-calendar"></i> <?php echo date('F j, Y', strtotime($booking['booking_date'])); ?> at 
                                         <?php echo date('h:i A', strtotime($booking['booking_time'])); ?>
                                     </p>
                                 </div>
@@ -150,7 +144,6 @@ include '../includes/navbar.php';
                 </div>
             </div>
             
-            <!-- Notifications -->
             <div class="card">
                 <div class="card-header">
                     <h3>Notifications</h3>

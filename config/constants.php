@@ -1,31 +1,15 @@
 <?php
-/**
- * Application Constants
- * Global configuration settings for the booking platform
- */
 
-// ==========================================
-// SITE CONFIGURATION
-// ==========================================
-
-// Site Information
 define('SITE_NAME', 'BookingPro');
-define('SITE_URL', 'http://localhost/bookme'); // ⚠️ UPDATE THIS for production
+define('SITE_URL', 'http://localhost/bookme');
 define('ADMIN_EMAIL', 'admin@bookingplatform.com');
 
-// Version
 define('APP_VERSION', '1.0.0');
 
-// ==========================================
-// FILE UPLOAD SETTINGS
-// ==========================================
-
-// Upload Paths
 define('UPLOAD_PATH', __DIR__ . '/../assets/uploads/profiles/');
 define('UPLOAD_URL', SITE_URL . '/assets/uploads/profiles/');
 
-// File Upload Limits
-define('MAX_FILE_SIZE', 5242880); // 5MB in bytes (5 * 1024 * 1024)
+define('MAX_FILE_SIZE', 5242880);
 define('ALLOWED_EXTENSIONS', ['jpg', 'jpeg', 'png', 'gif', 'webp']);
 define('ALLOWED_MIME_TYPES', [
     'image/jpeg',
@@ -35,33 +19,14 @@ define('ALLOWED_MIME_TYPES', [
     'image/webp'
 ]);
 
-// ==========================================
-// PAGINATION SETTINGS
-// ==========================================
-
 define('ITEMS_PER_PAGE', 12);
 define('BOOKINGS_PER_PAGE', 10);
 define('USERS_PER_PAGE', 20);
 
-// ==========================================
-// BOOKING SETTINGS
-// ==========================================
-
-// Time slot interval in minutes (e.g., 30 = slots every 30 minutes)
 define('BOOKING_SLOT_INTERVAL', 30);
-
-// Minimum hours in advance required to make a booking
 define('MIN_BOOKING_HOURS', 2);
-
-// Maximum days in advance customers can book
 define('MAX_BOOKING_DAYS', 90);
-
-// Auto-complete bookings after how many days
 define('AUTO_COMPLETE_DAYS', 1);
-
-// ==========================================
-// PROFESSIONAL CATEGORIES
-// ==========================================
 
 define('CATEGORIES', [
     'Barber',
@@ -86,48 +51,25 @@ define('CATEGORIES', [
     'Other'
 ]);
 
-// ==========================================
-// EMAIL CONFIGURATION (Optional)
-// ==========================================
-
-// Enable/Disable Email Notifications
-define('ENABLE_EMAIL', false); // Set to true when configured
-
-// SMTP Settings (for Gmail, Yahoo, etc.)
+define('ENABLE_EMAIL', false);
 define('SMTP_HOST', 'smtp.gmail.com');
 define('SMTP_PORT', 587);
-define('SMTP_USERNAME', 'your-email@gmail.com'); // ⚠️ UPDATE THIS
-define('SMTP_PASSWORD', 'your-app-password');     // ⚠️ UPDATE THIS (use app password)
+define('SMTP_USERNAME', 'your-email@gmail.com');
+define('SMTP_PASSWORD', 'your-app-password');
 define('SMTP_FROM_EMAIL', 'noreply@bookingplatform.com');
 define('SMTP_FROM_NAME', 'BookingPro Platform');
-define('SMTP_ENCRYPTION', 'tls'); // 'tls' or 'ssl'
+define('SMTP_ENCRYPTION', 'tls');
 
-// Email Templates
 define('EMAIL_BOOKING_CREATED_SUBJECT', 'Booking Request Received');
 define('EMAIL_BOOKING_APPROVED_SUBJECT', 'Booking Approved!');
 define('EMAIL_BOOKING_CANCELLED_SUBJECT', 'Booking Cancelled');
 
-// ==========================================
-// WHATSAPP CONFIGURATION (Optional)
-// ==========================================
+define('ENABLE_WHATSAPP', false);
+define('WHATSAPP_API_KEY', 'your-api-key');
+define('WHATSAPP_API_URL', 'https://api.whatsapp.com/send');
+define('WHATSAPP_PHONE_NUMBER', '+2348012345678');
 
-// Enable/Disable WhatsApp Notifications
-define('ENABLE_WHATSAPP', false); // Set to true when configured
-
-// WhatsApp API Settings (use services like Twilio, WhatsApp Business API, etc.)
-define('WHATSAPP_API_KEY', 'your-api-key');           // ⚠️ UPDATE THIS
-define('WHATSAPP_API_URL', 'https://api.whatsapp.com/send'); // ⚠️ UPDATE THIS
-define('WHATSAPP_PHONE_NUMBER', '+2348012345678');    // Your WhatsApp Business Number
-
-// ==========================================
-// TIMEZONE SETTINGS
-// ==========================================
-
-date_default_timezone_set('Africa/Lagos'); // ⚠️ UPDATE based on your location
-
-// ==========================================
-// DAYS OF WEEK
-// ==========================================
+date_default_timezone_set('Africa/Lagos');
 
 define('DAYS_OF_WEEK', [
     'Monday',
@@ -139,77 +81,37 @@ define('DAYS_OF_WEEK', [
     'Sunday'
 ]);
 
-// ==========================================
-// BOOKING STATUSES
-// ==========================================
-
 define('BOOKING_STATUS_PENDING', 'pending');
 define('BOOKING_STATUS_APPROVED', 'approved');
 define('BOOKING_STATUS_CANCELLED', 'cancelled');
 define('BOOKING_STATUS_COMPLETED', 'completed');
 
-// ==========================================
-// USER ROLES
-// ==========================================
-
 define('ROLE_ADMIN', 'admin');
 define('ROLE_PROFESSIONAL', 'professional');
 define('ROLE_CUSTOMER', 'customer');
 
-// ==========================================
-// PAYMENT SETTINGS (Optional - for future)
-// ==========================================
+define('ENABLE_PAYMENTS', false);
+define('PAYMENT_GATEWAY', 'paystack');
+define('PAYMENT_PUBLIC_KEY', 'your-public-key');
+define('PAYMENT_SECRET_KEY', 'your-secret-key');
+define('PAYMENT_CURRENCY', 'NGN');
 
-define('ENABLE_PAYMENTS', false); // Set to true when payment is integrated
-define('PAYMENT_GATEWAY', 'paystack'); // 'paystack', 'flutterwave', 'stripe'
-define('PAYMENT_PUBLIC_KEY', 'your-public-key');    // ⚠️ UPDATE THIS
-define('PAYMENT_SECRET_KEY', 'your-secret-key');    // ⚠️ UPDATE THIS
-define('PAYMENT_CURRENCY', 'NGN'); // NGN, USD, etc.
-
-// ==========================================
-// SECURITY SETTINGS
-// ==========================================
-
-// Password minimum length
 define('MIN_PASSWORD_LENGTH', 6);
-
-// Session timeout (in seconds) - 2 hours
 define('SESSION_TIMEOUT', 7200);
-
-// Maximum login attempts before lockout
 define('MAX_LOGIN_ATTEMPTS', 5);
-
-// Lockout duration in minutes
 define('LOCKOUT_DURATION', 15);
-
-// ==========================================
-// RATING SETTINGS
-// ==========================================
 
 define('MIN_RATING', 1);
 define('MAX_RATING', 5);
 define('ENABLE_REVIEWS', true);
 
-// ==========================================
-// NOTIFICATION SETTINGS
-// ==========================================
-
 define('NOTIFICATIONS_PER_PAGE', 10);
 define('AUTO_DELETE_OLD_NOTIFICATIONS', true);
 define('NOTIFICATION_RETENTION_DAYS', 30);
 
-// ==========================================
-// SEARCH SETTINGS
-// ==========================================
-
 define('SEARCH_RESULTS_PER_PAGE', 12);
 define('ENABLE_SEARCH_SUGGESTIONS', true);
 
-// ==========================================
-// LOCATION SETTINGS
-// ==========================================
-
-// Popular locations in Port Harcourt (Add more as needed)
 define('POPULAR_LOCATIONS', [
     'Trans Amadi',
     'Rumuola',
@@ -236,11 +138,7 @@ define('POPULAR_LOCATIONS', [
     'Other'
 ]);
 
-// ==========================================
-// DEBUG SETTINGS (DISABLE IN PRODUCTION!)
-// ==========================================
-
-define('DEBUG_MODE', true); // ⚠️ Set to FALSE in production!
+define('DEBUG_MODE', true);
 
 if (DEBUG_MODE) {
     error_reporting(E_ALL);
@@ -252,16 +150,8 @@ if (DEBUG_MODE) {
     ini_set('error_log', __DIR__ . '/../logs/error.log');
 }
 
-// ==========================================
-// CACHE SETTINGS
-// ==========================================
-
 define('ENABLE_CACHE', false);
-define('CACHE_DURATION', 3600); // 1 hour
-
-// ==========================================
-// SOCIAL MEDIA (Optional)
-// ==========================================
+define('CACHE_DURATION', 3600);
 
 define('FACEBOOK_URL', '');
 define('TWITTER_URL', '');

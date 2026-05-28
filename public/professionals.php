@@ -3,16 +3,13 @@ require_once '../config/database.php';
 require_once '../config/constants.php';
 require_once '../includes/functions.php';
 
-// Get filters
 $categoryFilter = $_GET['category'] ?? '';
 $locationFilter = $_GET['location'] ?? '';
 $searchQuery = $_GET['search'] ?? '';
 
-// Pagination
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $offset = ($page - 1) * ITEMS_PER_PAGE;
 
-// Build query
 $query = "SELECT p.*, u.name, u.phone 
           FROM professionals p 
           JOIN users u ON p.user_id = u.id 
@@ -36,13 +33,11 @@ if ($searchQuery) {
     $params[] = "%$searchQuery%";
 }
 
-// Get total count
 $countStmt = $conn->prepare(str_replace("p.*, u.name, u.phone", "COUNT(*) as total", $query));
 $countStmt->execute($params);
 $totalProfessionals = $countStmt->fetch()['total'];
 $totalPages = ceil($totalProfessionals / ITEMS_PER_PAGE);
 
-// Add ordering and pagination
 $query .= " ORDER BY p.rating DESC, p.total_bookings DESC LIMIT ? OFFSET ?";
 $params[] = ITEMS_PER_PAGE;
 $params[] = $offset;
@@ -173,7 +168,7 @@ include '../includes/navbar.php';
             <?php endif; ?>
         <?php else: ?>
             <div class="empty-state">
-                <div class="empty-icon">🔍</div>
+                <div class="empty-icon"><i class="fas fa-search"></i></div>
                 <h3>No professionals found</h3>
                 <p>Try adjusting your search filters</p>
                 <a href="professionals.php" class="btn btn-primary" style="margin-top: 1rem;">

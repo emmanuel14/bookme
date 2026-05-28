@@ -7,7 +7,6 @@ $pageTitle = 'Home';
 include 'includes/header.php';
 include 'includes/navbar.php';
 
-// Get featured professionals
 $stmt = $conn->query("SELECT p.*, u.name, u.phone FROM professionals p 
                       JOIN users u ON p.user_id = u.id 
                       WHERE p.approved = TRUE 
@@ -15,7 +14,6 @@ $stmt = $conn->query("SELECT p.*, u.name, u.phone FROM professionals p
                       LIMIT 6");
 $featuredPros = $stmt->fetchAll();
 
-// Get categories with count
 $stmt = $conn->query("SELECT category, COUNT(*) as count FROM professionals 
                       WHERE approved = TRUE 
                       GROUP BY category 
@@ -50,19 +48,19 @@ $categories = $stmt->fetchAll();
         <div class="grid grid-4">
             <?php foreach (array_slice(CATEGORIES, 0, 8) as $category): ?>
                 <a href="public/professionals.php?category=<?php echo urlencode($category); ?>" class="card" style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary-color);">
                         <?php
                         $icons = [
-                            'Barber' => '💈',
-                            'Tailor' => '✂️',
-                            'Mechanic' => '🔧',
-                            'Makeup Artist' => '💄',
-                            'Photographer' => '📷',
-                            'Plumber' => '🔨',
-                            'Electrician' => '⚡',
-                            'Caterer' => '🍽️'
+                            'Barber' => '<i class="fas fa-scissors"></i>',
+                            'Tailor' => '<i class="fas fa-cut"></i>',
+                            'Mechanic' => '<i class="fas fa-wrench"></i>',
+                            'Makeup Artist' => '<i class="fas fa-palette"></i>',
+                            'Photographer' => '<i class="fas fa-camera"></i>',
+                            'Plumber' => '<i class="fas fa-wrench"></i>',
+                            'Electrician' => '<i class="fas fa-bolt"></i>',
+                            'Caterer' => '<i class="fas fa-utensils"></i>'
                         ];
-                        echo $icons[$category] ?? '👤';
+                        echo $icons[$category] ?? '<i class="fas fa-user"></i>';
                         ?>
                     </div>
                     <h4><?php echo $category; ?></h4>
@@ -98,7 +96,7 @@ $categories = $stmt->fetchAll();
                         </p>
                         
                         <div class="profile-rating">
-                            <span style="color: #fbbf24;">★</span>
+                            <span style="color: #fbbf24;"><i class="fas fa-star"></i></span>
                             <strong><?php echo number_format($pro['rating'], 1); ?></strong>
                             <span style="color: var(--gray-color);">(<?php echo $pro['total_bookings']; ?> bookings)</span>
                         </div>

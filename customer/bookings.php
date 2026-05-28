@@ -7,11 +7,9 @@ requireLogin('customer');
 
 $customerId = $_SESSION['user_id'];
 
-// Handle booking cancellation
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cancel_booking'])) {
     $bookingId = clean($_POST['booking_id']);
     
-    // Verify booking belongs to customer
     $stmt = $conn->prepare("SELECT id FROM bookings WHERE id = ? AND customer_id = ?");
     $stmt->execute([$bookingId, $customerId]);
     
@@ -26,10 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cancel_booking'])) {
     exit;
 }
 
-// Get filter status
 $status = isset($_GET['status']) ? clean($_GET['status']) : 'all';
 
-// Build query
 $query = "SELECT b.*, 
           u.name as professional_name, 
           u.phone as professional_phone,
@@ -146,17 +142,17 @@ include '../includes/navbar.php';
                             
                             <div class="booking-detail">
                                 <strong>Date:</strong>
-                                <span>📅 <?php echo date('l, F j, Y', strtotime($booking['booking_date'])); ?></span>
+                                <span><i class="fas fa-calendar"></i> <?php echo date('l, F j, Y', strtotime($booking['booking_date'])); ?></span>
                             </div>
                             
                             <div class="booking-detail">
                                 <strong>Time:</strong>
-                                <span>🕒 <?php echo date('h:i A', strtotime($booking['booking_time'])); ?></span>
+                                <span><i class="fas fa-clock"></i> <?php echo date('h:i A', strtotime($booking['booking_time'])); ?></span>
                             </div>
                             
                             <div class="booking-detail">
                                 <strong>Duration:</strong>
-                                <span>⏱️ <?php echo $booking['duration']; ?> minutes</span>
+                                <span><i class="fas fa-hourglass-end"></i> <?php echo $booking['duration']; ?> minutes</span>
                             </div>
                             
                             <div class="booking-detail">
@@ -173,7 +169,7 @@ include '../includes/navbar.php';
                             
                             <div class="booking-contact">
                                 <strong>Contact:</strong>
-                                <span>📞 <?php echo htmlspecialchars($booking['professional_phone']); ?></span>
+                                <span><i class="fas fa-phone"></i> <?php echo htmlspecialchars($booking['professional_phone']); ?></span>
                             </div>
                         </div>
                         
