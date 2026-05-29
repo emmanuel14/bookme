@@ -111,7 +111,7 @@ include '../includes/navbar.php';
                 
                 <button type="submit" class="btn btn-primary btn-block">Create Account</button>
             </form>
-        </div>
+        </div>S
         
         <div class="card-footer" style="text-align: center;">
             <p>Already have an account? <a href="login.php">Login here</a></p>
