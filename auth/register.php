@@ -110,7 +110,7 @@ include '../includes/navbar.php';
                 </div>
                 
                 <button type="submit" class="btn btn-primary btn-block">Create Account</button>
-            </form>S
+            </form>
         </div>
         
         <div class="card-footer" style="text-align: center;">
