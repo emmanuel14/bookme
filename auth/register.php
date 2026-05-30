@@ -88,7 +88,7 @@ include '../includes/navbar.php';
                     <label class="form-label">Email Address</label>
                     <input type="email" name="email" class="form-control" required 
                            placeholder="Enter your email" value="<?php echo $_POST['email'] ?? ''; ?>">
-                </div>e
+                </div>
                 
                 <div class="form-group">
                     <label class="form-label">Phone Number</label>
