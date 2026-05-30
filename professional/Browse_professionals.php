@@ -173,7 +173,7 @@ include '../includes/navbar.php';
             <?php endif; ?>
         <?php else: ?>
             <div class="empty-state">
-                <div class="empty-icon">🔍</div>
+                <div class="empty-icon"></div>
                 <h3>No professionals found</h3>
                 <p>Try adjusting your search filters</p>
                 <a href="professionals.php" class="btn btn-primary" style="margin-top: 1rem;">
