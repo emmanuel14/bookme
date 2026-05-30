@@ -181,7 +181,7 @@ include '../includes/navbar.php';
                 </a>
             </div>
         <?php endif; ?>
-    </div>x
+    </div>
 </div>
 
 <style>
