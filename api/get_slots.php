@@ -15,7 +15,7 @@ if ($action === 'services') {
         echo json_encode(['success' => false, 'message' => 'Professional ID required']);
         exit;
     }
-n    
+    
     $services = getProfessionalServices($professionalId);
     echo json_encode(['success' => true, 'services' => $services]);
     exit;
