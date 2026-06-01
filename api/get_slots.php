@@ -7,7 +7,7 @@ header('Content-Type: application/json');
 
 $action = $_GET['action'] ?? 'slots';
 
-if ($action === 'services') {s
+if ($action === 'services') {
     // Get services for a professional
     $professionalId = $_GET['professional_id'] ?? null;
     
