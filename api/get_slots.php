@@ -22,7 +22,7 @@ if ($action === 'services') {
 }
 
 // Get available time slots
-$professionalId = $_GET['professional_id'] ?? null;
+$professionalId = $_GET['professional_id'] ?? null;a
 $serviceId = $_GET['service_id'] ?? null;
 $date = $_GET['date'] ?? null;
 
