@@ -33,4 +33,4 @@ if (!$professionalId || !$serviceId || !$date) {
 
 $slots = getAvailableSlots($professionalId, $serviceId, $date);
 echo json_encode(['success' => true, 'slots' => $slots]);
-?>d
+?>
