@@ -29,7 +29,7 @@ $date = $_GET['date'] ?? null;
 if (!$professionalId || !$serviceId || !$date) {
     echo json_encode(['success' => false, 'message' => 'Missing required parameters']);
     exit;
-}s
+}
 
 $slots = getAvailableSlots($professionalId, $serviceId, $date);
 echo json_encode(['success' => true, 'slots' => $slots]);
