@@ -14,7 +14,7 @@ if ($action === 'services') {
     if (!$professionalId) {
         echo json_encode(['success' => false, 'message' => 'Professional ID required']);
         exit;
-    }
+    }w
     
     $services = getProfessionalServices($professionalId);
     echo json_encode(['success' => true, 'services' => $services]);
