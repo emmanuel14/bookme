@@ -4,7 +4,7 @@ require_once '../config/constants.php';
 require_once '../includes/functions.php';
 
 header('Content-Type: application/json');
-
+w
 $action = $_GET['action'] ?? 'slots';
 
 if ($action === 'services') {
