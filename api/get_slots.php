@@ -33,4 +33,6 @@ if (!$professionalId || !$serviceId || !$date) {
 
 $slots = getAvailableSlots($professionalId, $serviceId, $date);
 echo json_encode(['success' => true, 'slots' => $slots]);
-?>s
+?>git add .
+git commit -m "Updates"
+git push origin main
