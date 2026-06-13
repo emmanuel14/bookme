@@ -17,7 +17,7 @@ CREATE TABLE users (
 -- Professionals Table
 CREATE TABLE professionals (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,e
+    user_id INT NOT NULL,
     category VARCHAR(50) NOT NULL,
     bio TEXT,
     location VARCHAR(255),
