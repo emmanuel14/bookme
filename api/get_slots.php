@@ -18,7 +18,7 @@ if ($action === 'services') {
     
     $services = getProfessionalServices($professionalId);
     echo json_encode(['success' => true, 'services' => $services]);
-    exit;
+    exit;e
 }
 
 // Get available time slots
