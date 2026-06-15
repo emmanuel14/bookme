@@ -19,7 +19,7 @@ CREATE TABLE professionals (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     category VARCHAR(50) NOT NULL,
-    bio TEXT,x
+    bio TEXT,
     location VARCHAR(255),
     profile_picture VARCHAR(255) DEFAULT 'default-avatar.png',
     approved BOOLEAN DEFAULT FALSE,
