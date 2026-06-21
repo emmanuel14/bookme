@@ -58,7 +58,7 @@ CREATE TABLE availability (
 CREATE TABLE bookings (
     id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT NOT NULL,
-    professional_id INT NOT NULL,
+    professional_id INT NOT NULL,r
     service_id INT NOT NULL,
     booking_date DATE NOT NULL,
     booking_time TIME NOT NULL,
