@@ -63,7 +63,7 @@ CREATE TABLE bookings (
     booking_date DATE NOT NULL,
     booking_time TIME NOT NULL,
     status ENUM('pending', 'approved', 'cancelled', 'completed') DEFAULT 'pending',
-    notes TEXT,s
+    notes TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (customer_id) REFERENCES users(id) ON DELETE CASCADE,
