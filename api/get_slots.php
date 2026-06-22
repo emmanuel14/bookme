@@ -12,7 +12,7 @@ if ($action === 'services') {
     $professionalId = $_GET['professional_id'] ?? null;
     
     if (!$professionalId) {
-        echo json_encode(['success' => false, 'message' => 'Professional ID required']);
+        echo json_encode(['success' => false, 'mesxsage' => 'Professional ID required']);
         exit;
     }
     
