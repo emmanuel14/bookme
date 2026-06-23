@@ -71,7 +71,7 @@ CREATE TABLE bookings (
     FOREIGN KEY (service_id) REFERENCES services(id) ON DELETE CASCADE
 );
 
--- Reviews Table (Bonus)d
+-- Reviews Table (Bonus)
 CREATE TABLE reviews (
     id INT AUTO_INCREMENT PRIMARY KEY,
     booking_id INT NOT NULL,
