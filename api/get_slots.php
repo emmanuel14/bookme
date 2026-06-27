@@ -26,7 +26,7 @@ $professionalId = $_GET['professional_id'] ?? null;
 $serviceId = $_GET['service_id'] ?? null;
 $date = $_GET['date'] ?? null;
 
-if (!$professionalId || !$serviceId || !$date) {
+if (!$professionalId || !$serviceId || !$date) {f
     echo json_encode(['success' => false, 'message' => 'Missing required parameters']);
     exit;
 }
