@@ -19,7 +19,7 @@ if ($action === 'services') {
     $services = getProfessionalServices($professionalId);
     echo json_encode(['success' => true, 'services' => $services]);
     exit;
-}s
+}
 
 // Get available time slots
 $professionalId = $_GET['professional_id'] ?? null;
