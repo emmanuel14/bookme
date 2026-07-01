@@ -8,7 +8,7 @@ if (isLoggedIn()) {
     $role = $_SESSION['user_role'];
     header("Location: " . SITE_URL . "/$role/dashboard.php");
     exit;
-}
+}w
 
 $error = '';
 $success = '';
