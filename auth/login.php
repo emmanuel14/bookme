@@ -3,7 +3,7 @@ require_once '../config/database.php';
 require_once '../config/constants.php';
 require_once '../includes/functions.php';
 
-// Redirect if already logged in
+// Redirect if already logged ins
 if (isLoggedIn()) {
     $role = $_SESSION['user_role'];
     header("Location: " . SITE_URL . "/$role/dashboard.php");
