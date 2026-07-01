@@ -2,7 +2,7 @@
 require_once '../config/database.php';
 require_once '../config/constants.php';
 require_once '../includes/functions.php';
-w
+
 // Redirect if already logged in
 if (isLoggedIn()) {
     $role = $_SESSION['user_role'];
