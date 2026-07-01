@@ -13,7 +13,7 @@ if (isLoggedIn()) {
 $error = '';
 $success = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {n
     $email = clean($_POST['email']);
     $password = $_POST['password'];
     
