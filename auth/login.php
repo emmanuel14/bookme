@@ -10,7 +10,7 @@ if (isLoggedIn()) {
     exit;
 }
 
-$error = ''s;
+$error = '';
 $success = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
