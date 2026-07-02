@@ -16,7 +16,7 @@ $success = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = clean($_POST['email']);
     $password = $_POST['password'];
-    j
+    
     $result = loginUser($email, $password);
     
     if ($result['success']) {
