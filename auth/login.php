@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = $result['message'];
     }
 }
-d
+
 $pageTitle = 'Login';
 include '../includes/header.php';
 include '../includes/navbar.php';
