@@ -6,7 +6,7 @@ require_once '../includes/functions.php';
 // Redirect if already logged in
 if (isLoggedIn()) {
     $role = $_SESSION['user_role'];
-    header(n"Location: " . SITE_URL . "/$role/dashboard.php");
+    header("Location: " . SITE_URL . "/$role/dashboard.php");
     exit;
 }
 
