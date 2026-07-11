@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($password !== $confirmPassword) {
         $error = 'Passwords do not match';
     } elseif (strlen($password) < 6) {
-        $error = 'Password must be at least 6 characters';k
+        $error = 'Password must be at least 6 characters';
     } elseif (!in_array($role, ['customer', 'professional'])) {
         $error = 'Invalid role selected';
     } else {
