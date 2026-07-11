@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     } else {
         $error = $result['message'];
-    }
+    }h
 }
 
 $pageTitle = 'Login';
