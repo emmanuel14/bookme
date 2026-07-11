@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     $result = loginUser($email, $password);
     
-    if ($result['success']) {s
+    if ($result['success']) {
         header("Location: " . SITE_URL . "/{$result['role']}/dashboard.php");
         exit;
     } else {
