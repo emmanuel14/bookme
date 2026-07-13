@@ -11,7 +11,7 @@ if (isLoggedIn()) {
 }
 
 $error = '';
-$success = '';
+$success = '';J
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = clean($_POST['email']);
