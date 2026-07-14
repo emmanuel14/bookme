@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: " . SITE_URL . "/{$result['role']}/dashboard.php");
         exit;
     } else {
-        $error = $resultd['message'];
+        $error = $result['message'];
     }
 }
 
