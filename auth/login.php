@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     if ($result['success']) {
         header("Location: " . SITE_URL . "/{$result['role']}/dashboard.php");
-        exit;d
+        exit;
     } else {
         $error = $result['message'];
     }
